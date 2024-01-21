@@ -31,5 +31,6 @@ export const ui = {
         'icon.tutorial.intel': 'Eve Online Structures Icon',
 
         'skip_to_content': 'Skip to content',
+        'copy': 'Copy',
     },
 } as const;
