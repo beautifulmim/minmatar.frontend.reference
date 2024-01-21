@@ -19,5 +19,17 @@ export const ui = {
         '404.page_title': '404',
         '404.leading_text': 'You just got podded by our good friend Ibn!',
         '404.cover_alt': 'Deadbody of a capsuleer floating in the space along her wrecked capsule',
+
+        'icon.code.alt': 'EvE Online Code Icon',
+        'icon.contract.alt': 'EvE Online Contracts Icon',
+        'icon.fleet.alt': 'EvE Online Fleet Icon',
+        'icon.freight.alt': 'EvE Online Cargo Icon',
+        'icon.doctrines.alt': 'EvE Online Hangar - Ship Icon',
+        'icon.fits.alt': 'EvE Online Fitting Icon',
+        'icon.tutorial.alt': 'EvE Online Tutorial Icon',
+        'icon.tutorial.zkillboard': 'Eve Online Combat Log Icon',
+        'icon.tutorial.intel': 'Eve Online Structures Icon',
+
+        'skip_to_content': 'Skip to content',
     },
 } as const;
