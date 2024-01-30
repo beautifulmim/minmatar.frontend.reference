@@ -16,7 +16,14 @@ import FreightServiceEvEIcon from '@components/icons/FreightServiceEvEIcon.astro
 import ZkillboardEvEIcon from '@components/icons/ZkillboardEvEIcon.astro';
 import FleetLogo from '@components/icons/FleetLogo.astro';
 import UserAuth from '@components/UserAuth.astro';
-import CodeEvEIcon from '@components/icons/CodeEvEIcon.astro';
+import RifterEvEIcon from '@components/icons/RifterEvEIcon.astro';
+import StackEvEIcon from '@components/icons/StackEvEIcon.astro';
+import DesignTokenEvEIcon from '@components/icons/DesignTokenEvEIcon.astro';
+import GlobeEvEIcon from '@components/icons/GlobeEvEIcon.astro';
+import CompositionEvEIcon from '@components/icons/CompositionEvEIcon.astro';
+import ComponentEvEIcon from '@components/icons/ComponentEvEIcon.astro';
+import JWTEvEIcon from '@components/icons/JWTEvEIcon.astro';
+import EnvEvEIcon from '@components/icons/EnvEvEIcon.astro';
 
 const page = Astro.url.pathname
 ---
@@ -29,6 +36,30 @@ const page = Astro.url.pathname
             </NeocomButton>
             <UserAuth />
         </Flexblock>
+        <NeocomButton active={page.includes(translatePath('/web_stack/'))} title="Web stack" href={translatePath('/web_stack/')}>
+            <StackEvEIcon />
+        </NeocomButton>
+        <NeocomButton active={page.includes(translatePath('/intel/'))} title="Getting started" href={translatePath('/intel/')}>
+            <RifterEvEIcon />
+        </NeocomButton>
+        <NeocomButton active={page.includes(translatePath('/intel/'))} title="Design tokens" href={translatePath('/intel/')}>
+            <DesignTokenEvEIcon />
+        </NeocomButton>
+        <NeocomButton active={page.includes(translatePath('/intel/'))} title="Routing and i18n" href={translatePath('/intel/')}>
+            <GlobeEvEIcon />
+        </NeocomButton>
+        <NeocomButton active={page.includes(translatePath('/intel/'))} title="Compositions" href={translatePath('/intel/')}>
+            <CompositionEvEIcon />
+        </NeocomButton>
+        <NeocomButton active={page.includes(translatePath('/intel/'))} title="Global components" href={translatePath('/intel/')}>
+            <ComponentEvEIcon />
+        </NeocomButton>
+        <NeocomButton active={page.includes(translatePath('/intel/'))} title="Permissions" href={translatePath('/intel/')}>
+            <JWTEvEIcon />
+        </NeocomButton>
+        <NeocomButton active={page.includes(translatePath('/intel/'))} title="Environment variables" href={translatePath('/intel/')}>
+            <EnvEvEIcon />
+        </NeocomButton>
     </nav>
     <Flexblock gap="0" x-data="neocom_clock()" x-init="init()">
         <div class="[ loader-wrapper ]">

@@ -27,13 +27,9 @@ import WebStackIcon from '@components/icons/WebStackIcon.astro';
 import DesignTokenIcon from '@components/icons/DesignTokenIcon.astro';
 import CompositionIcon from '@components/icons/CompositionIcon.astro';
 import JWTIcon from '@components/icons/JWTIcon.astro';
-import GlobeIcon from '@components/icons/GlobeIcon.astro';
-import RifterIcon from '@components/icons/RifterIcon.astro';
-import ComponentIcon from '@components/icons/ComponentIcon.astro';
-import EnvIcon from '@components/icons/EnvIcon.astro';
 
-const page_title = t('index.page_title');
-const page_description = t('index.leading_text');
+const page_title = t('web_stack.page_title');
+const page_description = t('web_stack.leading_text');
 ---
 
 <Viewport title={page_title} meta_description={page_description}>
@@ -49,44 +45,30 @@ const page_description = t('index.leading_text');
 		<Wrapper max_width="var(--max-text-width)" neocom={true} centered={true}>
             <Flexblock gap='var(--space-2xl)'>
                 <h1>{page_title}</h1>
-                <ThumbInfoCard image={get_player_icon(2121103796)} alt="Beautiful Mim profile picture">
-                    <p>Beautiful Mim</p>
-                    <small><a href="mailto:beautifulmim.eve@gmail.com">beautifulmim.eve@gmail.com</a></small>
-                </ThumbInfoCard>
                 <p>{page_description}</p>
-                
-                <Flexblock gap='var(--space-l)'>
+
+                <Flexblock class="circled" gap='var(--space-l)'>
+                    <h2>Web stack</h2>
+
                     <Grid min_item_width="260px">
-                        <ButtonCard title="Webstack" href={translatePath('/web_stack/')}>
-                            <WebStackIcon slot="icon" />
+                        <ButtonCard title="Astro" subtitle="Web Framework" circle={true} href={translatePath('/web_stack/')}>
+                            <AstroIcon slot="icon" />
                         </ButtonCard>
 
-                        <ButtonCard title="Getting Started" href="/">
-                            <RifterIcon slot="icon" />
+                        <ButtonCard title="Tailwind" subtitle="CSS Framework" circle={true} href={translatePath('/web_stack/')}>
+                            <TailwindIcon slot="icon" />
                         </ButtonCard>
 
-                        <ButtonCard title="Design Tokens" href="/">
-                            <DesignTokenIcon slot="icon" />
+                        <ButtonCard title="Alpine.js" subtitle="JavaScript Framework" circle={true} href={translatePath('/web_stack/')}>
+                            <AlpineJSIcon slot="icon" />
                         </ButtonCard>
 
-                        <ButtonCard title="Routing and i18n" href="/">
-                            <GlobeIcon slot="icon" />
+                        <ButtonCard title="htmx" subtitle="JavaScript Library" circle={true} href={translatePath('/web_stack/')}>
+                            <HtmxIcon slot="icon" />
                         </ButtonCard>
 
-                        <ButtonCard title="Compositions" href="/">
-                            <CompositionIcon slot="icon" />
-                        </ButtonCard>
-
-                        <ButtonCard title="Global components" href="/">
-                            <ComponentIcon slot="icon" />
-                        </ButtonCard>
-
-                        <ButtonCard title="Permissions" href="/">
-                            <JWTIcon slot="icon" />
-                        </ButtonCard>
-
-                        <ButtonCard title="Environment variables" href="/">
-                            <EnvIcon slot="icon" />
+                        <ButtonCard title="Tippy.js" subtitle="JavaScript Library" circle={true} href={translatePath('/web_stack/')}>
+                            <TippyJSIcon slot="icon" />
                         </ButtonCard>
                     </Grid>
                 </Flexblock>
@@ -94,13 +76,3 @@ const page_description = t('index.leading_text');
 		</Wrapper>
 	</main>
 </Viewport>
-
-<style lang="scss">
-    .circled picture {
-        background-color: white;
-        border-radius: 50%;
-        height: 64px;
-        width: 64px;
-        display: flex;
-    }
-</style>

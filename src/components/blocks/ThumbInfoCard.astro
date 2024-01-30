@@ -1,0 +1,24 @@
+---
+import FixedFluid from '@components/compositions/FixedFluid.astro';
+import FlexInline from '@components/compositions/FlexInline.astro';
+import Flexblock from '@components/compositions/Flexblock.astro';
+
+interface Props {
+    image: string;
+    alt: string;
+}
+
+const {
+    image,
+    alt,
+} = Astro.props
+---
+
+<FlexInline>
+    <picture class="rounded-[50%] overflow-hidden">
+        <img src={image} alt={alt} height="64" width="64" />
+    </picture>
+    <Flexblock class="[ items-start justtify-center ]" gap="0">
+        <slot />
+    </Flexblock>
+</FlexInline>

@@ -1,0 +1,97 @@
+---
+import ComponentBlock from '@components/blocks/ComponentBlock.astro';
+import Flexblock from '@components/compositions/Flexblock.astro';
+
+interface Props {
+    title:              string,
+    subtitle?:          false | string,
+    href:               string;
+    circle?:            boolean,
+    [propName: string]: any;
+}
+
+const {
+    title,
+    subtitle = false,
+    href,
+    circle = false,
+    ...attributes
+} = Astro.props;
+
+delete attributes.class
+---
+
+<a class:list={[ 'button-card', { circle: circle }, Astro.props.class]} {...attributes} href={href}>
+    <ComponentBlock padding_block='var(--space-xl)'>
+        <Flexblock class="items-center">
+            <picture>
+                <slot name="icon" />
+            </picture>
+            <Flexblock gap="var(--space-3xs)" class="[ text-center ]">
+                <h3>{title}</h3>
+                {subtitle &&
+                    <small>{subtitle}</small>
+                }
+            </Flexblock>
+        </Flexblock>
+    </ComponentBlock>
+</a>
+
+<style lang="scss">
+    picture {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 64px;
+        width: 64px;
+    }
+
+    :global(.button-card picture > *) {
+        transition: var(--fast-transition);
+    }
+        
+    .circle picture {
+        background-color: white;
+        border-radius: 50%;
+    }
+
+    @media (hover: hover) {
+        :global(.button-card:focus-visible picture > *),
+        :global(.button-card:hover:not([disabled]) picture > *) {
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+    }
+
+    :global(.button-card:active:not([disabled]) picture > *) {
+        transform: scale(1);
+    }
+
+    @media (hover: none) {
+        :global(.button-card picture > *) {
+            transform: scale(1);
+        }
+
+        :global(.button-card:active:not([disabled]) picture > *) {
+            transform: scale(0.8);
+        }
+    }
+
+    .button-card {
+        color: var(--highlight);
+    }
+
+    .button-card {
+        text-decoration: none;
+    }
+
+    h3 {
+        text-align: center;
+        color: var(--highlight);
+    }
+
+        
+    small {
+        color: var(--fleet-yellow);
+    }
+</style>
